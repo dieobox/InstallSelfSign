@@ -1,0 +1,2 @@
+$selfsigncert = New-SelfSignedCertificate -DnsName localhost -CertStoreLocation cert:\LocalMachine\My -KeySpec KeyExchange -Subject "CN=KEMS" -NotAfter (Get-Date).AddYears(99)
+Move-Item "Cert:\LocalMachine\My\$($selfsigncert.Thumbprint)" Cert:\LocalMachine\Root
